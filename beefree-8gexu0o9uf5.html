@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title></title>
+<meta charset="utf-8"/>
+<meta content="width=device-width" name="viewport"/>
+<style>
+		.bee-row,
+		.bee-row-content {
+			position: relative
+		}
+
+		.bee-button .content {
+			text-align: center
+		}
+
+		.bee-row-1 .bee-row-content,
+		.bee-row-2 {
+			background-position: top center;
+			background-repeat: no-repeat
+		}
+
+		.bee-row-1,
+		.bee-row-3 .bee-col-1,
+		body {
+			background-color: #fff
+		}
+
+		.bee-row-1 .bee-col-1,
+		.bee-row-1 .bee-col-2,
+		.bee-row-2 .bee-col-1,
+		.bee-row-3 .bee-col-1,
+		.bee-row-4 .bee-col-1,
+		.bee-row-4 .bee-col-2,
+		.bee-row-5 .bee-col-1 {
+			padding-bottom: 5px;
+			padding-top: 5px
+		}
+
+		.bee-row-1,
+		.bee-row-1 .bee-row-content,
+		.bee-row-2,
+		.bee-row-3,
+		.bee-row-4,
+		.bee-row-5 {
+			background-repeat: no-repeat
+		}
+
+		body {
+			color: #000;
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+		}
+
+		a {
+			color: #0068a5
+		}
+
+		* {
+			box-sizing: border-box
+		}
+
+		body,
+		p {
+			margin: 0
+		}
+
+		.bee-row-content {
+			max-width: 1215px;
+			margin: 0 auto;
+			display: flex
+		}
+
+		.bee-row-content .bee-col-w3 {
+			flex-basis: 25%
+		}
+
+		.bee-row-content .bee-col-w6 {
+			flex-basis: 50%
+		}
+
+		.bee-row-content .bee-col-w12 {
+			flex-basis: 100%
+		}
+
+		.bee-button a,
+		.bee-icon .bee-icon-label-right a {
+			text-decoration: none
+		}
+
+		.bee-divider,
+		.bee-image {
+			overflow: auto
+		}
+
+		.bee-divider .center,
+		.bee-image .bee-center {
+			margin: 0 auto
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-2,
+		.bee-row-2 .bee-col-1 .bee-block-4,
+		.bee-row-3 .bee-col-1 .bee-block-4,
+		.bee-row-3 .bee-col-1 .bee-block-5,
+		.bee-row-3 .bee-col-1 .bee-block-7 {
+			width: 100%
+		}
+
+		.bee-icon,
+		.bee-icon .bee-icon-image,
+		.bee-icon .bee-icon-label-right {
+			display: inline-block
+		}
+
+		.bee-icon {
+			vertical-align: middle
+		}
+
+		.bee-icon .bee-icon-image {
+			vertical-align: middle;
+			margin-right: -4px
+		}
+
+		.bee-image img {
+			display: block;
+			width: 100%
+		}
+
+		.bee-text {
+			overflow-wrap: anywhere
+		}
+
+		@media (max-width:768px) {
+			.bee-mobile_hide {
+				display: none
+			}
+
+			.bee-row-content:not(.no_stack) {
+				display: block
+			}
+		}
+
+		.bee-row-1 .bee-row-content {
+			color: #000
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-3,
+		.bee-row-1 .bee-col-1 .bee-block-7,
+		.bee-row-1 .bee-col-2 .bee-block-3,
+		.bee-row-1 .bee-col-2 .bee-block-4,
+		.bee-row-2 .bee-col-1 .bee-block-1,
+		.bee-row-2 .bee-col-1 .bee-block-3,
+		.bee-row-2 .bee-col-1 .bee-block-5,
+		.bee-row-2 .bee-col-1 .bee-block-9,
+		.bee-row-3 .bee-col-1 .bee-block-1,
+		.bee-row-3 .bee-col-1 .bee-block-6,
+		.bee-row-3 .bee-col-1 .bee-block-9,
+		.bee-row-4 .bee-col-3 .bee-block-5 {
+			padding: 10px
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-4 {
+			padding: 10px 25px
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-5 {
+			padding: 10px 25px 25px
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-6 {
+			padding: 10px 10px 10px 20px;
+			text-align: left
+		}
+
+		.bee-row-1 .bee-col-2 .bee-block-2 {
+			padding-right: 5px;
+			width: 100%
+		}
+
+		.bee-row-2 {
+			background-color: #0130ac
+		}
+
+		.bee-row-2 .bee-row-content,
+		.bee-row-3 .bee-row-content,
+		.bee-row-4 .bee-row-content,
+		.bee-row-5 .bee-row-content {
+			background-repeat: no-repeat;
+			color: #000
+		}
+
+		.bee-row-2 .bee-col-1 .bee-block-2,
+		.bee-row-2 .bee-col-1 .bee-block-8,
+		.bee-row-3 .bee-col-1 .bee-block-2 {
+			padding: 5px 35px 10px
+		}
+
+		.bee-row-2 .bee-col-1 .bee-block-6 {
+			padding: 10px 10px 10px 20px;
+			text-align: center
+		}
+
+		.bee-row-4 {
+			background-color: #000
+		}
+
+		.bee-row-4 .bee-col-1 .bee-block-2,
+		.bee-row-4 .bee-col-1 .bee-block-3,
+		.bee-row-4 .bee-col-1 .bee-block-4,
+		.bee-row-4 .bee-col-1 .bee-block-5,
+		.bee-row-4 .bee-col-1 .bee-block-6,
+		.bee-row-4 .bee-col-2 .bee-block-2,
+		.bee-row-4 .bee-col-3 .bee-block-2,
+		.bee-row-4 .bee-col-3 .bee-block-3,
+		.bee-row-4 .bee-col-3 .bee-block-4 {
+			padding: 10px 10px 10px 20px
+		}
+
+		.bee-row-4 .bee-col-3 {
+			padding: 5px
+		}
+
+		.bee-row-5 .bee-col-1 .bee-block-1 {
+			color: #9d9d9d;
+			font-family: inherit;
+			font-size: 15px;
+			padding-bottom: 5px;
+			padding-top: 5px;
+			text-align: center
+		}
+
+		.bee-row-5 .bee-col-1 .bee-block-1 .bee-icon-image {
+			padding: 5px 6px 5px 5px
+		}
+
+		.bee-row-5 .bee-col-1 .bee-block-1 .bee-icon {
+			margin-left: 0;
+			margin-right: 0
+		}
+	</style>
+</head>
+<body>
+<div class="bee-page-container">
+<div class="bee-row bee-row-1">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w6">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:60px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-image"><img alt="" class="bee-fixedwidth" src="images/Screen_Shot_2022-03-31_at_12.31.13_AM.png" style="max-width:364px;"/></div>
+<div class="bee-block bee-block-3 bee-divider">
+<div class="spacer" style="height:10px;"></div>
+</div>
+<div class="bee-block bee-block-4 bee-text">
+<div class="bee-text-content" style="line-height: 120%; font-size: 12px; color: #1f0b0b; font-family: inherit;">
+<p style="font-size: 14px; line-height: 16px;"><strong style=""><span style="font-size: 46px; line-height: 55px;">Find local careers and jobs <span style="color: #0130ac; line-height: 14px;">today</span>!</span></strong></p>
+</div>
+</div>
+<div class="bee-block bee-block-5 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; color: #393d47; font-family: inherit;">
+<p style="font-size: 14px; line-height: 21px;"><span style="font-size: 28px; line-height: 42px;">Get hired by top companies.</span></p>
+</div>
+</div>
+<div class="bee-block bee-block-6 bee-button"><a class="bee-button-content" href="https://go2affm.com/c/?p=16615&o=9324" style="font-size: 12px; line-height: 24px; background-color: #0130ac; border-bottom: 0px solid #8a3b8f; border-left: 0px solid #8a3b8f; border-radius: 4px; border-right: 0px solid #8a3b8f; border-top: 0px solid #8a3b8f; color: #ffffff; font-family: inherit; max-width: 100%; padding-bottom: 10px; padding-left: 50px; padding-right: 45px; padding-top: 10px; width: auto; font-weight: 400; letter-spacing: 1px; display: inline-block;"><span style="font-size: 16px; line-height: 200%; word-break: break-word; letter-spacing: 1px;"><strong>Apply now!</strong></span></a></div>
+<div class="bee-block bee-block-7 bee-divider">
+<div class="spacer" style="height:0px;"></div>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w6">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:60px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-image"><img alt="Interview Candidate" class="bee-center bee-fixedwidth" src="images/handsome-man-pointing-up.jpeg" style="max-width:364px;"/></div>
+<div class="bee-block bee-block-3 bee-divider bee-mobile_hide">
+<div class="spacer" style="height:30px;"></div>
+</div>
+<div class="bee-block bee-block-4 bee-divider">
+<div class="spacer" style="height:30px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-2">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:10px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; color: #34495e; font-family: inherit;">
+<p style="font-size: 14px; line-height: 21px; text-align: center;"><span style="color: #fbff23; line-height: 18px;"><span style="font-size: 28px; line-height: 42px;"><strong style=""><span style="line-height: 18px;">3 Easy Steps to </span></strong><strong style=""><span style="line-height: 18px;">and F</span></strong></span><span style="font-size: 28px; line-height: 42px;"><strong style=""><span style="line-height: 18px;">ind your Next Job!</span></strong></span></span></p>
+</div>
+</div>
+<div class="bee-block bee-block-3 bee-divider">
+<div class="spacer" style="height:20px;"></div>
+</div>
+<div class="bee-block bee-block-4 bee-image"><img alt="Guys Shaking Hand" class="bee-center bee-fixedwidth bee-fullwidthOnMobile" src="images/middle_Image.png" style="max-width:607px;"/></div>
+<div class="bee-block bee-block-5 bee-divider">
+<div class="spacer" style="height:45px;"></div>
+</div>
+<div class="bee-block bee-block-6 bee-button"><a class="bee-button-content" href="https://go2affm.com/c/?p=16615&o=9324" style="font-size: 12px; line-height: 24px; background-color: #00f0c0; border-bottom: 0px solid #8a3b8f; border-left: 0px solid #8a3b8f; border-radius: 4px; border-right: 0px solid #8a3b8f; border-top: 0px solid #8a3b8f; color: #000000; font-family: inherit; max-width: 100%; padding-bottom: 10px; padding-left: 50px; padding-right: 45px; padding-top: 10px; width: auto; font-weight: 400; letter-spacing: 1px; display: inline-block;"><span style="font-size: 16px; line-height: 200%; word-break: break-word; letter-spacing: 1px;"><strong>Apply now!</strong></span></a></div>
+<div class="bee-block bee-block-7 bee-spacer">
+<div class="spacer" style="height:60px;"></div>
+</div>
+<div class="bee-block bee-block-8 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; color: #34495e; font-family: inherit;">
+<p style="font-size: 14px; line-height: 21px; text-align: center;"><strong style=""><span style="color: #fbff23; line-height: 18px;">Our goal is to provide excellent job opportunities to the everyday American jobseeker. We provide these job opportunities by finding as many jobs from around the internet as we can. Finding these jobs is often a complicated, technical process.</span></strong><br style=""/><br style=""/><strong style=""><span style="color: #fbff23; line-height: 18px;">To ensure we provide the best possible job results to you, we are powered by FindDreamJobs. What does this mean? It’s quite simple: you get access to great, relevant jobs in your area from us and FindDreamJobs. It’s our pleasure to offer you these opportunities at zero cost.</span></strong></p>
+</div>
+</div>
+<div class="bee-block bee-block-9 bee-divider">
+<div class="spacer" style="height:0px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-3 bee-mobile_hide">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:25px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; color: #34495e; font-family: inherit;">
+<p style="font-size: 14px; line-height: 21px; text-align: center;"><span style="font-size: 22px; line-height: 33px;">Top companies that are hiring on StartACareerToday now!</span></p>
+</div>
+</div>
+<div class="bee-block bee-block-3 bee-spacer">
+<div class="spacer" style="height:60px;"></div>
+</div>
+<div class="bee-block bee-block-4 bee-image"><img alt="" class="bee-center bee-fixedwidth" src="images/Screen_Shot_2022-03-31_at_1.01.02_AM.png" style="max-width:668px;"/></div>
+<div class="bee-block bee-block-5 bee-image"><img alt="Referral Logos" class="bee-center bee-fullwidthOnMobile bee-fixedwidth" src="images/Screen_Shot_2022-03-31_at_1.02.55_AM.png" style="max-width:607px;"/></div>
+<div class="bee-block bee-block-6 bee-divider">
+<div class="spacer" style="height:0px;"></div>
+</div>
+<div class="bee-block bee-block-7 bee-image"><img alt="" class="bee-center bee-fixedwidth" src="images/Screen_Shot_2022-03-31_at_12.59.39_AM.png" style="max-width:243px;"/></div>
+<div class="bee-block bee-block-8 bee-spacer">
+<div class="spacer" style="height:60px;"></div>
+</div>
+<div class="bee-block bee-block-9 bee-divider">
+<div class="center" style="border-top:1px solid #BBBBBB;width:100%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-4">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w3">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:60px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-text">
+<div class="bee-text-content" style="line-height: 120%; font-size: 12px; font-family: inherit; color: #ffffff;">
+<p style="font-size: 16px; line-height: 19px; text-align: left;">CA Consumers</p>
+</div>
+</div>
+<div class="bee-block bee-block-3 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; font-family: inherit; color: #d0d0d0;">
+<p style="font-size: 14px; line-height: 21px; text-align: left;"><a href="http://www.example.com" rel="noopener" style="text-decoration: none; color: #d0d0d0;" target="_blank">About Us</a></p>
+</div>
+</div>
+<div class="bee-block bee-block-4 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; font-family: inherit; color: #d0d0d0;">
+<p style="font-size: 14px; line-height: 21px; text-align: left;"><a href="https://contact.startacareertoday.com/policies/terms" rel="noopener" style="color: #d0d0d0;" target="_blank">Terms & Conditions</a></p>
+</div>
+</div>
+<div class="bee-block bee-block-5 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; font-family: inherit; color: #d0d0d0;">
+<p style="font-size: 14px; line-height: 21px; text-align: left;"><a href="https://contact.startacareertoday.com/policies/privacy" rel="noopener" style="color: #d0d0d0;" target="_blank">Privacy Policy</a></p>
+</div>
+</div>
+<div class="bee-block bee-block-6 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; font-family: inherit; color: #d0d0d0;">
+<p style="font-size: 14px; line-height: 21px; text-align: left;"><a href="https://contact.finddreamjobs.com/contact.aspx?1=1&utm_source=onull" rel="noopener" style="color: #d0d0d0;" target="_blank">Contact Us</a></p>
+</div>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w6">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:60px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; font-family: inherit; color: #d0d0d0;">
+<p style="font-size: 14px; line-height: 21px; text-align: left;"><strong style="">StartACareerToday</strong></p>
+<p style="font-size: 14px; line-height: 21px; text-align: left;"> </p>
+<p style="font-size: 14px; line-height: 21px; text-align: left;">is a job search engine. We are not an agent or representative of any Employer.</p>
+<p style="font-size: 14px; line-height: 21px; text-align: left;">Registered trademarks are the property of their respective owners who do not sponsor or endorse this promotion.</p>
+<p style="font-size: 14px; line-height: 21px; text-align: left;"> </p>
+<p style="font-size: 14px; line-height: 21px; text-align: left;">To gain access to the job listings, you must agree to our Terms & Conditions and Privacy Policy, provide certain personally identifiable information and consent to our sharing such information with our marketing partners for which we may be compensated.</p>
+</div>
+</div>
+</div>
+<div class="bee-col bee-col-3 bee-col-w3">
+<div class="bee-block bee-block-1 bee-spacer">
+<div class="spacer" style="height:60px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-text">
+<div class="bee-text-content" style="line-height: 120%; font-size: 12px; font-family: inherit; color: #ffffff;">
+<p style="font-size: 16px; line-height: 19px; text-align: left;"><strong style="">Links</strong></p>
+</div>
+</div>
+<div class="bee-block bee-block-3 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; font-family: inherit; color: #d0d0d0;">
+<p style="line-height: 18px;"><a href="https://www.finddreamjobs.com/resume-builder/" rel="noopener" style="color: #d0d0d0;" target="_blank">Resume Builder Tool</a></p>
+</div>
+</div>
+<div class="bee-block bee-block-4 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; font-family: inherit; color: #d0d0d0;">
+<p style="line-height: 18px;"><a href="https://www.finddreamjobs.com/guides/the-complete-step-by-step-guide-to-getting-a-job/" rel="noopener" style="color: #d0d0d0;" target="_blank">How to Get a Job</a></p>
+</div>
+</div>
+<div class="bee-block bee-block-5 bee-text">
+<div class="bee-text-content" style="line-height: 150%; font-size: 12px; font-family: inherit; color: #d0d0d0;">
+<p style="font-size: 14px; line-height: 21px; text-align: left;">© 2017-2022 StartACareerToday.com. All rights reserved.</p>
+</div>
+</div>
+<div class="bee-block bee-block-6 bee-spacer">
+<div class="spacer" style="height:60px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-5">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-icons">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
